@@ -1,15 +1,63 @@
 ---
+import '../styles/global.css';
+import Col1 from "../layouts/Col1.astro";
+import Col2 from  "../layouts/Col2.astro";
+import Col3 from  "../layouts/Col3.astro";
+import FlexLayout from '../layouts/FlexLayout.astro';
+import DragParent from '../components/DragParent.astro';
+import {activities, answers} from '/opt/build/repo/src/scripts/shuffle.js'; 
+const activitiesCount = 22;
 ---
+
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> Transaction or Not </title>
+		<link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&family=Roboto+Mono&display=swap"
+		rel="stylesheet">
+		<link rel = "stylesheet" href = "https://cdn.jsdelivr.net/gh/bevacqua/dragula/dist/dragula.min.css">
 	</head>
+		
 	<body>
-		<h1>Astro</h1>
+		
+		<FlexLayout>
+			<Col1 > 
+				<DragParent>	
+					{activities.slice(0,activitiesCount).map((activity,index) => ( <div class = {`activity ${answers[index]}`}> {activity} </div>))}
+				</DragParent>
+			</Col1>
+			<Col2 />
+			<Col3>
+			</Col3>
+	  </FlexLayout>
+	  <script> 
+		import "/opt/build/repo/src/scripts/grade.js";
+		import "../dragulaFolder/dragula.min.js";
+		import "../scripts/drag.js";
+		import "https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js";
+	  </script>
+	 
+	 <script>
+		import {shuffle} from '/opt/build/repo/src/scripts/shuffle.js'; 
+
+		var activities = [
+			"Purchasing equipment",
+			"Paying dividends",
+			"Selling products",
+			"Buying inventory",
+			"Hiring new employees",
+			"Paying salaries",
+			"Hosting a Marketing campaign",
+			"Hosting a conference",
+			"Purchasing supplies",
+			"Interviewing job applicants",
+			"Investing in stocks",
+			"Attending an industry conference",
+		]
+		var answers = ['Yes', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'No', 'Yes', 'No', 'Yes', 'No']
+		var [activities, answers] = shuffle(activities, answers);
+	  </script>
 	</body>
 </html>
