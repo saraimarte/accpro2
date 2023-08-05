@@ -1,47 +1,26 @@
 ---
 const { colNumber } = Astro.props;
+const { cardTitle } = Astro.props;
+
+import CardTitle from '../components/CardTitle.astro';
+
 ---
-<div class ={`grid grid-${colNumber}`}>
-  <div class="item">
-    <div class="item-content">
+
+<div class = "cardContainer">
+
+<CardTitle title = {cardTitle} />
+
+<div class = {`grid grid-${colNumber}`}>
       <slot/>
-    </div>
-  </div>
 </div>
 
+</div>
 <style>
-    .item {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      line-height: 100px;
-      margin: 5px;
-      z-index: 1;
-  }
-  .item.muuri-item-hidden {
-      z-index: 0;
-  }
-  .item.muuri-item-releasing {
-      z-index: 2;
-  }
-  .item.muuri-item-dragging {
-      z-index: 3;
-  }
-  .item-content {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      background: red;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-  }
-  .grid-2 .item-content {
-      background: green;
-  }
-  .item.muuri-item-dragging .item-content,
-  .item.muuri-item-releasing .item-content {
-      background: blue;
-  }
+.cardContainer{
+ /* border:5px solid yellow;*/
+  width:400px;
+  display:flex;
+  flex-direction:column;
+  gap:1em;
+}
 </style>

@@ -1,24 +1,49 @@
 ---
 // Import Layouts
 import MainLayout from '../layouts/MainLayout.astro';
-
+import FlexContainer from '../layouts/FlexContainer.astro'
 //Import Components
 import DragCol from '../components/DragCol.astro';
-
 //Import Styles
 import '../styles/gridStyles.css';
+import '../styles/global.css';
+const title = "Asset, Liability, StockHolder's Equity"
+
+var accounts = [
+	'Cash',
+    'Accounts Payable',
+    'Phone Bill', 
+	'Tuition Payable',
+    'Service Revenue', 
+	'Salaries Payable', 
+	'Supplies'
+
+]
+
+
 ---
 
 <MainLayout> 
 	<script src = "../scripts/script.js"></script>
-	<DragCol colNumber = "1"> 1 </DragCol>
-	<DragCol colNumber = "2"> 2 </DragCol>
-	<DragCol colNumber = "3"> 3 </DragCol>
-
+	<h1 class = "title"> {title} </h1>
+	<FlexContainer> 
+		<DragCol colNumber = "1" cardTitle = "Accounts">	
+			{accounts.map((account) => (<div class = "item"><div class = "item-content"> {account}</div></div>))}
+		</DragCol>
+		<DragCol colNumber = "2" cardTitle = "Assets">  </DragCol>
+		<DragCol colNumber = "3" cardTitle = "Liabilities"> </DragCol>
+		<DragCol colNumber = "4" cardTitle = "Stockholder's Equity"> </DragCol>
+	
+	</FlexContainer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/haltu/muuri@0.9.5/dist/muuri.min.js"></script>
 </MainLayout>
 
 <style>
-	
+	.title{
+		font-family: 'Roboto', sans-serif;
+		color:white;
+		text-align:center;
+	}
+
 </style>

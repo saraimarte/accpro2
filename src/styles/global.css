@@ -1,0 +1,19 @@
+*{
+    box-sizing:border-box;
+    user-select: none;
+}
+
+
+body {
+    margin:0;
+    padding:0;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+    background-color:#de2e53;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+
+}
