@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+  }
+.grid {
+    position: relative;
+    width: 20%;
+    background: #ccc;
+    border: 5px solid transparent;
+}

@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "astro": "^2.9.7",
-    "lodash": "^4.17.21"
+    "muuri": "^0.9.5"
   }
 }

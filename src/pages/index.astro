@@ -1,17 +1,24 @@
 ---
+// Import Layouts
+import MainLayout from '../layouts/MainLayout.astro';
 
+//Import Components
+import DragCol from '../components/DragCol.astro';
+
+//Import Styles
+import '../styles/gridStyles.css';
 ---
 
+<MainLayout> 
+	<script src = "../scripts/script.js"></script>
+	<DragCol colNumber = "1"> 1 </DragCol>
+	<DragCol colNumber = "2"> 2 </DragCol>
+	<DragCol colNumber = "3"> 3 </DragCol>
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title> Asset, Liability, Equity </title>
-		<link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&family=Roboto+Mono&display=swap"
-		rel="stylesheet">
-		<link rel = "stylesheet" href = "https://cdn.jsdelivr.net/gh/bevacqua/dragula/dist/dragula.min.css">
-	</head>	
-	<body>
-	</body>
-</html>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/haltu/muuri@0.9.5/dist/muuri.min.js"></script>
+</MainLayout>
+
+<style>
+	
+</style>
