@@ -1,0 +1,30 @@
+---
+import GradeContent from '../components/GradeContent.astro';
+---
+
+<div class = "gradeCard">
+    <button id = "btn">Grade</button>
+    <div class = "right" > </div>
+    <GradeContent/>
+</div>
+<style>
+    .gradeCard{
+        background-color:white;
+        height:100px;
+        width:20%;
+        border-radius:10px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    button{
+        border-radius:20px;
+        border:none;
+        background-color:#de2e53;
+        color:white;
+        padding:1em 2em;
+    }
+    button:hover{
+        background-color: #ca2a4d;
+    }
+</style>

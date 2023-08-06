@@ -1,0 +1,21 @@
+---
+
+const { title } = Astro.props;
+import GradeCard from '../components/GradeCard.astro';
+---
+
+<div class = "top">
+    <h1 class = "title"> {title} </h1>
+    <GradeCard/>
+
+</div>
+
+<style>
+    .top{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        width:85%;
+        border:5px solid white;
+    }
+</style>

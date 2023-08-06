@@ -10,7 +10,7 @@ import CardTitle from '../components/CardTitle.astro';
 
 <CardTitle title = {cardTitle} />
 
-<div class = {`grid grid-${colNumber}`}>
+<div id = {`grid-${colNumber}`} class = {`grid grid-${colNumber}`}>
       <slot/>
 </div>
 

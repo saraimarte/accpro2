@@ -3,11 +3,12 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import FlexContainer from '../layouts/FlexContainer.astro'
 //Import Components
+import HeaderRow from '../components/HeaderRow.astro';
+import GradeCard from '../components/GradeCard.astro';
 import DragCol from '../components/DragCol.astro';
 //Import Styles
 import '../styles/gridStyles.css';
 import '../styles/global.css';
-const title = "Asset, Liability, StockHolder's Equity"
 
 var accounts = [
 	'Cash',
@@ -20,15 +21,24 @@ var accounts = [
 
 ]
 
+var answers = [
+	'A',
+	'L', 
+	'L',
+	'L', 
+	'R', 
+	'L', 
+	'A'
+]
 
 ---
 
 <MainLayout> 
 	<script src = "../scripts/script.js"></script>
-	<h1 class = "title"> {title} </h1>
+	<HeaderRow title = "TITLE" />
 	<FlexContainer> 
 		<DragCol colNumber = "1" cardTitle = "Accounts">	
-			{accounts.map((account) => (<div class = "item"><div class = "item-content"> {account}</div></div>))}
+			{accounts.map((account, index) => (<div class = 'item'><div class = {`item-content ${answers[index]}`}> {account}</div></div>))}
 		</DragCol>
 		<DragCol colNumber = "2" cardTitle = "Assets">  </DragCol>
 		<DragCol colNumber = "3" cardTitle = "Liabilities"> </DragCol>
@@ -37,6 +47,8 @@ var accounts = [
 	</FlexContainer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/haltu/muuri@0.9.5/dist/muuri.min.js"></script>
+	<script src = "../scripts/grade.js"></script>
+
 </MainLayout>
 
 <style>
