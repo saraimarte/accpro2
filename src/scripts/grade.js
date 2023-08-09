@@ -7,8 +7,9 @@ var rightCountDisplay = document.getElementById("rightCount");
 var rightHeading = document.getElementById("rightHeading");
 var wrongHeading = document.getElementById("wrongHeading");
 var wrongCountDisplay = document.getElementById("wrongCount");
-var allNodes = dragParent.querySelectorAll(".activity");
+var allNodes = grid1.querySelectorAll(".activity");
 var gradeButton = document.getElementById("btn");
+var col3 = document.getElementById("col3")
 //Check 
 
 function notDone(){
@@ -17,10 +18,10 @@ function notDone(){
 
 gradeButton.addEventListener("click", ()=>{
     var allNodes = grid1.querySelectorAll(".item-content");
-
+    console.log(allNodes.length)
     //If Column 1 is empty then...
     if(allNodes.length <=0){
-        displayWhenGraded.style.display = "flex";
+        col3.style.display = "flex";
         var rightCount = 0;
         var wrongCount = 0;       
         function grade (column, correctAnswer, wrongAnswer1, wrongAnswer2) {
@@ -40,8 +41,10 @@ gradeButton.addEventListener("click", ()=>{
         //Equity Column
         grade(grid4, 'S', 'A', 'L');
          
+        rightCountDisplay.textContent = rightCount;
+        wrongCountDisplay.textContent = wrongCount;
         if (wrongCount === 0) {
-            gradeButton.style.borderRadius = "100px";
+            gradeButton.style.borderRadius = "50px";
             gradeButton.style.padding = "0.8em";
             gradeButton.textContent = "Great, Play Again!";
             gradeButton.addEventListener("click", function() {
@@ -51,13 +54,10 @@ gradeButton.addEventListener("click", ()=>{
         
         } else {
             gradeButton.textContent = "Grade Again!"
+            gradeButton.style.padding = "0.5em 1em";
+
         }
-        if (wrongCount === 1) {
-            wrongHeading.textContent =  "Wrong Answer";
-        }
-        if(rightCount === 1) {
-            rightHeading.textContent =  "Right Answer";
-        }
+       
     }
 
 

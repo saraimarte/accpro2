@@ -15,5 +15,14 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-
+    gap:1em;
 }
+
+
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+        body{
+            gap:0;
+        }
+    }
