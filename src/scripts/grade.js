@@ -25,9 +25,9 @@ gradeButton.addEventListener("click", ()=>{
         var rightCount = 0;
         var wrongCount = 0;       
         function grade (column, correctAnswer, wrongAnswer1, wrongAnswer2) {
-            var CorrectArray = column.getElementsByClassName(correctAnswer);
-            var WrongArray1 = column.getElementsByClassName(wrongAnswer1);
-            var WrongArray2 = column.getElementsByClassName(wrongAnswer2);
+            var CorrectArray = column.querySelectorAll(`.${correctAnswer}`);
+            var WrongArray1 = column.querySelectorAll(`.${wrongAnswer1}`);
+            var WrongArray2 = column.querySelectorAll(`.${wrongAnswer2}`);
             var correct = CorrectArray.length;
             var incorrect = WrongArray1.length + WrongArray2.length;
             rightCount += correct;
@@ -36,16 +36,20 @@ gradeButton.addEventListener("click", ()=>{
         };
         //Asset Column
         grade(grid2, 'A', 'L', 'S');
+        console.log(`Assets: rightCount ${rightCount} wrongCount ${wrongCount}`)
         //Liability Column
         grade(grid3, 'L', 'A', 'S');
+        console.log(`Liabilities: rightCount ${rightCount} wrongCount ${wrongCount}`)
         //Equity Column
-        grade(grid4, 'S', 'A', 'L');
-         
+        grade(grid4, 'S', 'A', 'L');  
+        console.log(`Equity : rightCount ${rightCount} wrongCount ${wrongCount}`)
+
         rightCountDisplay.textContent = rightCount;
         wrongCountDisplay.textContent = wrongCount;
+        
         if (wrongCount === 0) {
-            gradeButton.style.borderRadius = "50px";
-            gradeButton.style.padding = "0.8em";
+            gradeButton.style.padding = "0.5em 1em";
+            gradeButton.style.width = "200px";
             gradeButton.textContent = "Great, Play Again!";
             gradeButton.addEventListener("click", function() {
             window.location.reload();

@@ -12,24 +12,43 @@ import '../styles/global.css';
 
 var accounts = [
 	'Cash',
-    'Accounts Payable',
+	'Revenue',
+	'Accounts Recivable', 
+	'Common Stock',
+	'Supplies',
+	'Accounts Payable',
+	'Retained Earnings',
+	'Equipment',
+	'Dividends',
+    'Notes Payable',
     'Phone Bill', 
+	'Sales Revenue',
 	'Tuition Payable',
+	'Equipment Expense',
     'Service Revenue', 
 	'Salaries Payable', 
-	'Supplies'
+	'Truck',
+	'Land',
+	'Utilities Expense',
+	'Bank Loan',
+	'Couch',
+	'Buildings',
+	'Ticket Revenue',
+	'Logo', 
+	'Mortgage Payable',
+	'Taxes Payable',
+	'Patent',
+	'Interest Payable',	
+	'Car',
+	'Unearned Revenue',
+	'Computer', 
+	'Rent Expense'
 
 ]
 
 var answers = [
-	'A',
-	'L', 
-	'L',
-	'L', 
-	'R', 
-	'L', 
-	'A'
-]
+'A','S','A','S','A','L','S','A','S','L','L','S','L','S','S','L','A','A','S','L','A','A','S','A','L','L','A','L','A','L','A','S'
+];
 
 ---
 
@@ -37,7 +56,7 @@ var answers = [
 	<script src = "../scripts/script.js"></script>
 	<HeaderRow title = "" />
 	<FlexContainer> 
-		<DragCol colNumber = "1" cardTitle = "Accounts">	
+		<DragCol colNumber = "1" cardTitle = "Items">	
 			{accounts.map((account, index) => (<div class = 'item'><div class = {`item-content ${answers[index]}`}> {account}</div></div>))}
 		</DragCol>
 		<DragCol colNumber = "2" cardTitle = "Assets">  </DragCol>
@@ -59,3 +78,76 @@ var answers = [
 	}
 
 </style>
+
+<!--
+var accounts = [
+	'Cash',
+	'Revenue',
+	'Accounts Recivable', 
+	'Common Stock',
+	'Supplies',
+	'Accounts Payable',
+	'Retained Earnings',
+	'Equipment',
+	'Dividends',
+    'Notes Payable',
+    'Phone Bill', 
+	'Sales Revenue',
+	'Tuition Payable',
+	'Equipment Expense',
+    'Service Revenue', 
+	'Salaries Payable', 
+	'Truck',
+	'Land',
+	'Utilities Expense',
+	'Bank Loan',
+	'Couch',
+	'Buildings',
+	'Ticket Revenue',
+	'Logo', 
+	'Mortgage Payable',
+	'Taxes Payable',
+	'Patent',
+	'Interest Payable',	
+	'Car',
+	'Unearned Revenue',
+	'Computer', 
+	'Rent Expense'
+
+]
+
+var answers = [
+  'A',
+  'S',
+  'A',
+  'S',
+  'A',
+  'L',
+  'S',
+  'A',
+  'S',
+  'L',
+  'E',
+  'S',
+  'L',
+  'E',
+  'E',
+  'S',
+  'L',
+  'A',
+  'E',
+  'L',
+  'L',
+  'A',
+  'A',
+  'S',
+  'I',
+  'L',
+  'A',
+  'L',
+  'A',
+  'A',
+  'A',
+  'L',
+  'A'
+]; -->
